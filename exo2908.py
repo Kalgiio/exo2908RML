@@ -1,7 +1,7 @@
 def menusupp(list):
     print("Quel animal voulez vous supprimer ?")
     nom = input()
-    for i in range(len(list[i])):
+    for i in range(len(list)):
         if list[i][0] == nom:
             confirmation(i)
 
