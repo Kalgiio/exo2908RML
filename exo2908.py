@@ -55,3 +55,29 @@ def confirmation(i):
         return list
     elif choix == "n":
         menu()
+
+        
+        
+ def ajouterAnimeaux(nom, race, sexe, age, pays, list):
+    list.append([nom, race, sexe, age, pays, list])
+    afficherAnimeaux(list)
+    return list
+
+
+
+
+def menuAjoutAnimeaux(list):
+    print("Quel est votre nom ?")
+    nom = input()
+    print("Quel est votre race ?")
+    race = input()
+    print("Quel est votre sexe ?")
+    sexe = input()
+    print("Quel est votre age")
+    age = input()
+    print("De quel pays venez-vous")
+    pays = input()
+
+    list = ajouterAnimeaux(nom, race, sexe, list)
+
+    return list
