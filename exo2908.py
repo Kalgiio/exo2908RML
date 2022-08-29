@@ -33,3 +33,25 @@ def main():
     menu()
 if __name__ == '__main__':
     main()
+    
+    
+    
+    
+    def menusupp(list):
+    print("Quel animal voulez vous supprimer ?")
+    nom = input()
+    for i in range(len(list[i])):
+        if list[i][0] == nom:
+            confirmation(i)
+
+
+
+def confirmation(i):
+    print(list[i])
+    print ("Confirmez la suppression y/n")
+    choix = input()
+    if choix == "y":
+        del list[i]
+        return list
+    elif choix == "n":
+        menu()
