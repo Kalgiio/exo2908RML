@@ -49,11 +49,20 @@ def modifier(list):
 
     print("Veuiller rensseigner le nom de l'animal a modifier")
     nom = input()
+    update = input()
 
     for i in range(len(list)):
         if list[i][0] == nom:
             print(list[i])
+            print("Quel champ (en nombre) souhaitez-vous modifier ? (1: Nom, 2: Race, 3: Sexe, 4: Age, 5: Pays")
+            champAMod = input()
+            print("Quel valeur souhaitez-vous mettre à la place ?")
+            valAMettre = input()
 
+            if champAMod == "1" or champAMod == "nom":
+                list[i][0] = valAMettre
+            elif champAMod == "2" or champAMod == "race":
+                list[i][1]
 
     return list
 
