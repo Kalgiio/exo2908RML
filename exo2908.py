@@ -73,7 +73,7 @@ def menu():#menu principal
         choix = input()
         match choix:
             case "1":
-                print("hello")
+                ajouterAnimeaux(list)
             case "2":
                 menusupp(list)
             case "3":
@@ -81,7 +81,7 @@ def menu():#menu principal
             case "4":
                 print("hello")
             case "5":
-                print("hello")
+                modifier(list)
             case"6":
                 flag = False
             case _:
