@@ -57,6 +57,8 @@ def modifier(list):
                 list[i][0] = valAMettre
             elif champAMod == "2" or champAMod == "race":
                 list[i][1] = valAMettre
+            elif champAMod == "3" or champAMod == "sexe":
+                list[i][2] = valAMettre
 
     return list
 
