@@ -1,15 +1,10 @@
 
-def ajouterAnimeaux(nom, race, sexe, age, pays, list):
-    list.append([nom, race, sexe, age, pays, list])
-    afficherAnimeaux(list)
+def ajouterAnimeaux(race, sexe, age, pays, list):
+    list.append([race, sexe, age, pays])
     return list
 
-
-
-
 def menuAjoutAnimeaux(list):
-    print("Quel est votre nom ?")
-    nom = input()
+
     print("Quel est votre race ?")
     race = input()
     print("Quel est votre sexe ?")
@@ -19,7 +14,7 @@ def menuAjoutAnimeaux(list):
     print("De quel pays venez-vous")
     pays = input()
 
-    list = ajouterAnimeaux(nom, race, sexe, age, pays, list)
+    ajouterAnimeaux(race, sexe, age, pays, list)
 
     return list
 
@@ -49,7 +44,6 @@ def modifier(list):
 
     print("Veuiller rensseigner le nom de l'animal a modifier")
     nom = input()
-    update = input()
 
     for i in range(len(list)):
         if list[i][0] == nom:
@@ -82,7 +76,7 @@ def menu():#menu principal
         choix = input()
         match choix:
             case "1":
-                ajouterAnimeaux(list)
+                menuAjoutAnimeaux(list)
             case "2":
                 menusupp(list)
             case "3":
@@ -102,7 +96,7 @@ def main():
 if __name__ == '__main__':
     main()
     
-    
+#aide a la gestion d'un zoo ajout,supprimer,afficher la liste, remplacer, modifier
     
     
 
