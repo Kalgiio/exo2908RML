@@ -1,3 +1,24 @@
+def menusupp(list):
+    print("Quel animal voulez vous supprimer ?")
+    nom = input()
+    for i in range(len(list[i])):
+        if list[i][0] == nom:
+            confirmation(i)
+
+
+
+def confirmation(i):
+    print(list[i])
+    print ("Confirmez la suppression y/n")
+    choix = input()
+    if choix == "y":
+        del list[i]
+        return list
+    elif choix == "n":
+        menu()
+
+
+
 def menu():#menu principal
 
     list = []
@@ -16,7 +37,7 @@ def menu():#menu principal
             case "1":
                 print("hello")
             case "2":
-                print("hello")
+                menusupp(list)
             case "3":
                 print("hello")
             case "4":
@@ -37,21 +58,4 @@ if __name__ == '__main__':
     
     
     
-    def menusupp(list):
-    print("Quel animal voulez vous supprimer ?")
-    nom = input()
-    for i in range(len(list[i])):
-        if list[i][0] == nom:
-            confirmation(i)
 
-
-
-def confirmation(i):
-    print(list[i])
-    print ("Confirmez la suppression y/n")
-    choix = input()
-    if choix == "y":
-        del list[i]
-        return list
-    elif choix == "n":
-        menu()
