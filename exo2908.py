@@ -45,7 +45,17 @@ def confirmation(i):
     elif choix == "n":
         menu()
 
+def modifier(list):
 
+    print("Veuiller rensseigner le nom de l'animal a modifier")
+    nom = input()
+
+    for i in range(len(list)):
+        if list[i][0] == nom:
+            print(list[i])
+
+
+    return list
 
 def menu():#menu principal
 
