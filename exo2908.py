@@ -5,7 +5,9 @@ def menusupp(list):
         if list[i][0] == nom:
             confirmation(i)
 
-
+def Afficher(list):
+    print(list)
+    return list
 
 def confirmation(i):
     print(list[i])
@@ -39,7 +41,7 @@ def menu():#menu principal
             case "2":
                 menusupp(list)
             case "3":
-                print("hello")
+                Afficher(list)
             case "4":
                 print("hello")
             case "5":
