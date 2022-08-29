@@ -1,25 +1,23 @@
 
-def ajouterAnimeaux(nom, race, sexe, age, pays, list):
-    list.append([nom, race, sexe, age, pays, list])
-    afficherAnimeaux(list)
+def ajouterAnimeaux(race, sexe, age, pays, list):
+    list.append([race, sexe, age, pays])
     return list
 
 
 
 
 def menuAjoutAnimeaux(list):
-    print("Quel est votre nom ?")
-    nom = input()
-    print("Quel est votre race ?")
+
+    print("Quelle est l'espece de l'animal ?")
     race = input()
-    print("Quel est votre sexe ?")
+    print("Quel est le sexe de l'animal ?")
     sexe = input()
-    print("Quel est votre age")
+    print("Quel age a t-il ?")
     age = input()
-    print("De quel pays venez-vous")
+    print("De quel pays vient-il ?")
     pays = input()
 
-    list = ajouterAnimeaux(nom, race, sexe, age, pays, list)
+    ajouterAnimeaux(race, sexe, age, pays, list)
 
     return list
 
@@ -29,13 +27,13 @@ def menusupp(list):
     nom = input()
     for i in range(len(list)):
         if list[i][0] == nom:
-            confirmation(i)
+            confirmation(i,list)
 
 def Afficher(list):
     print(list)
     return list
 
-def confirmation(i):
+def confirmation(i, list):
     print(list[i])
     print ("Confirmez la suppression y/n")
     choix = input()
@@ -43,6 +41,7 @@ def confirmation(i):
         del list[i]
         return list
     elif choix == "n":
+        print("D'accord des bisous <3")
         menu()
 
 
@@ -58,12 +57,12 @@ def menu():#menu principal
         print(" 3 : Afficher liste")
         print(" 4 : Remplacer")
         print(" 5 : Modifier")
-        print(" 6 : exit")
+        print(" 6 : Exit")
 
         choix = input()
         match choix:
             case "1":
-                print("hello")
+                menuAjoutAnimeaux(list)
             case "2":
                 menusupp(list)
             case "3":
@@ -75,7 +74,7 @@ def menu():#menu principal
             case"6":
                 flag = False
             case _:
-                print("erreur de saisie")
+                print("Erreur de saisie")
                 menu()
 
 def main():
