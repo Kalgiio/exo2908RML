@@ -1,15 +1,10 @@
 
-def ajouterAnimeaux(nom, race, sexe, age, pays, list):
-    list.append([nom, race, sexe, age, pays, list])
-    afficherAnimeaux(list)
+def ajouterAnimeaux(race, sexe, age, pays, list):#importation information
+    list.append([race, sexe, age, pays])
     return list
 
+def menuAjoutAnimeaux(list):#information animal
 
-
-
-def menuAjoutAnimeaux(list):
-    print("Quel est votre nom ?")
-    nom = input()
     print("Quel est votre race ?")
     race = input()
     print("Quel est votre sexe ?")
@@ -19,23 +14,23 @@ def menuAjoutAnimeaux(list):
     print("De quel pays venez-vous")
     pays = input()
 
-    list = ajouterAnimeaux(nom, race, sexe, age, pays, list)
+    ajouterAnimeaux(race, sexe, age, pays, list)
 
     return list
 
 
-def menusupp(list):
+def menusupp(list):#menu supression
     print("Quel animal voulez vous supprimer ?")
     nom = input()
     for i in range(len(list)):
         if list[i][0] == nom:
             confirmation(i)
 
-def Afficher(list):
+def Afficher(list):#afficher list
     print(list)
     return list
 
-def confirmation(i):
+def confirmation(i):#confirmation supression
     print(list[i])
     print ("Confirmez la suppression y/n")
     choix = input()
@@ -45,11 +40,10 @@ def confirmation(i):
     elif choix == "n":
         menu()
 
-def modifier(list):
+def modifier(list):#menu modifier
 
     print("Veuiller rensseigner le nom de l'animal a modifier")
     nom = input()
-    update = input()
 
     for i in range(len(list)):
         if list[i][0] == nom:
@@ -83,18 +77,19 @@ def menu():#menu principal
 
         choix = input()
         match choix:
-            case "1":
-                ajouterAnimeaux(list)
-            case "2":
+            case "1":#menu ajouter animal
+                menuAjoutAnimeaux(list)
+            case "2":#menu suprrimer animal
                 menusupp(list)
-            case "3":
+            case "3":#option afficher liste
                 Afficher(list)
-            case "4":
+            case "4":#menu remplacer
                 print("hello")
-            case "5":
+            case "5":#menu modifier
                 modifier(list)
-            case"6":
+            case"6":#exit
                 flag = False
+                print("Au revoir des bisous <3<3")
             case _:
                 print("erreur de saisie")
                 menu()
@@ -104,7 +99,7 @@ def main():
 if __name__ == '__main__':
     main()
     
-    
+#aide a la gestion d'un zoo ajout,supprimer,afficher la liste, remplacer, modifier
     
     
 
