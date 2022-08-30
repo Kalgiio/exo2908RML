@@ -62,6 +62,38 @@ def modifier(list):#menu modifier
 
     return list
 
+def remplacerunanimal(list):
+    print("veuillez saisir le nom a changer")
+    nom = input()
+    print("veuillez saisir la race a changer")
+    race = input()
+    print("veuillez saisir le sexe a changer")
+    sexe = input()
+    print("veuillez saisir l age a changer")
+    age = input()
+    print("veuillez saisir le pays a changer")
+    pays = input()
+
+    listanimalAmettre = [nom, race, sexe, age, pays]
+
+    print("Quel nom voulez-vous remplacer ?")
+
+    nomaremp = input()
+
+    for i in range(len(list)):
+        if list[i][0] == nomaremp:
+            list.pop(i)
+            list.insert(i, listanimalAmettre)
+        return list
+
+
+
+
+
+
+
+
+
 def menu():#menu principal
 
     list = []
@@ -84,7 +116,7 @@ def menu():#menu principal
             case "3":#option afficher liste
                 Afficher(list)
             case "4":#menu remplacer
-                print("hello")
+                remplacerunanimal(list)
             case "5":#menu modifier
                 modifier(list)
             case"6":#exit
