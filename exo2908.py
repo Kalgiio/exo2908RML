@@ -15,6 +15,7 @@ def menuAjoutAnimeaux(list):#information animal
     pays = input()
 
     ajouterAnimeaux(race, sexe, age, pays, list)
+    print(list)
 
     return list
 
